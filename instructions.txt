@@ -1,0 +1,45 @@
+make the user registeration and login and auth , then complete points and discounts system
+
+أعط رمضان حقه في التجهيز
+اهداف رمضان : 
+    1-تقليل التكبر
+    2-ختم القران ختمة واحدة على الاقل
+    3-اخراج صدقة الفطر من مالي الخاص
+___________________________________________________________________________________________________________
+
+User System:
+
+Steps : 
+    1- Dettecting offers Schmea in user model --- . 
+    2- making user routes and testing it  --- .
+    3- adding the authorization method to unaouthorized processes --- .
+    4- making the front end part : --- .
+        . making user auth --- .
+        . making profile routes --- .
+
+
+
+    () 5- Discounts system :
+        . () Total discount , by discount code --- .
+        . () Discounts store --- .
+
+        . () Product price discount --- .
+
+    () 6- Points system --- .
+
+    () 7- Receipt page  --- .
+    
+    ()   8- Gifts and News label --- .
+    ()   9- finshing the application and organize data and fields --- .
+    ()   10- make tests (General tests , requests tests , speed test , security test) --- .
+
+This system is important because now we have to make more functioanlities and we need the user system
+to save or do these functioanlities effectivly which are the updates from the customer and they are clear in the steps up in the list .
+
+___________________________________________________________________________________________________________
+
+Things to Always remember : 
+
+    1- Env variables : Port , Auth Secret , Url , DB Url , cartname cookie , ordername cookie
+
+
