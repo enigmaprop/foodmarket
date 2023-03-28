@@ -14,6 +14,8 @@ import LoginPage from "./pages/LoginPage";
 import UserPage from "./pages/UserPage";
 import ReceiptPage from "./pages/ReceiptPage";
 import Handle404Page from "./pages/Handle404Page";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import RefundPolicyPage from "./pages/RefundPolicyPage";
 
 function App() {
   
@@ -36,6 +38,9 @@ function App() {
 
         <Route path="/admin" element={<AdminPage pubkey='key' url={url}/>} />        
         <Route path="/admin/login" element={<AdminLoginPage pubkey='key' url={url}/>} />
+
+        <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="refund-policy" element={<RefundPolicyPage />} />
 
         <Route path="*" element={<Handle404Page/>} />
       </Routes>

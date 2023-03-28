@@ -1,10 +1,13 @@
+require('dotenv').config({path:'../.env'});
+
 const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
 const app = express();
 const cors = require('cors');
 
-mongoose.connect("mongodb://127.0.0.1:27017/theMall");
+mongoose.connect(process.env.DBURL);
+
 app.use(express.urlencoded({ extended: true }));
 app.use('/images' , express.static('public'));
 
@@ -66,4 +69,4 @@ app.use('/points', pointRoutes);
 const newsRoutes = require('./routes/newsRoutes');
 app.use('/news', newsRoutes);
 
-app.listen(4000, console.log('The app is listening on port 4000'));
+app.listen(process.env.SERVERPORT, console.log(`The app is listening on port ${process.env.SERVERPORT}`));

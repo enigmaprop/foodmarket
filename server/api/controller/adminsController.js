@@ -1,8 +1,10 @@
+require('dotenv').config({path:'../.env'})
+
 const Admin = require('../models/admin');
 const {v1} = require('uuid');
 
 const {signToken , verifyToken} = require('../auth/auth')
-const secret = 'hello';
+const secret = process.env.SECRET;
 
 
 module.exports.loginAdmin = async(req , res , next)=>{
