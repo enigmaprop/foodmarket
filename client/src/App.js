@@ -19,7 +19,7 @@ import RefundPolicyPage from "./pages/RefundPolicyPage";
 
 function App() {
   
-  const url = 'https://market-api-od3p.onrender.com:10000/'
+  const url = 'https://market-api-od3p.onrender.com/'
   return(
     <div>
       <Routes>
