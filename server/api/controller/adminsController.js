@@ -1,5 +1,6 @@
-require('dotenv').config({path:'../.env'})
-
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config({path:'../.env'})
+}
 const Admin = require('../models/admin');
 const {v1} = require('uuid');
 
@@ -33,7 +34,7 @@ module.exports.adminAuth = async (req , res , next)=>{
         if(req.body.key){
             const key =  await verifyToken(req.body.key , secret);
             const admin =  await Admin.findOne({key})
-            console.log(admin);
+            //console.log(admin);
             if(admin && admin.name && key === admin.key){
                   res.json({success:true});
                   next()

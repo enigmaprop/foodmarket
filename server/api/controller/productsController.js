@@ -43,9 +43,9 @@ module.exports.getProductById = async(req , res , next) => {
 // Get products by category from the database
 module.exports.getProductsByCategory = async(req , res , next) => {
     try{
-        console.log(req.params);
+        //console.log(req.params);
         const products = await Product.find({catagory:req.params.category});
-        console.log(products);
+        //console.log(products);
         res.json(products);
         next()
     }catch(err){
@@ -59,7 +59,7 @@ module.exports.deleteProduct = async(req , res , next) => {
     try{
         const deletedProduct = await Product.deleteOne({id:req.params.id});
         res.send('Deleted successfully');
-        console.log(deletedProduct);
+        //console.log(deletedProduct);
 
         if(fs.existsSync(`${publicPath}/image-${req.params.id}.jpeg`)){
             fs.unlinkSync(`${publicPath}/image-${req.params.id}.jpeg`);
@@ -123,24 +123,30 @@ module.exports.addProduct = (req, res, next) => {
             next(err);
         } else {
             // If upload succeeded, create a new product instance with the request data
-            const newProduct = new Product({
-            id: id,
-            name: req.body.name,
-            catagory: req.body.category,
-            price: req.body.price,
-            description: req.body.description,
-            image: {
-                path: req.file.path,
-                name: req.file.filename,
-                contentType: req.file.mimetype,
-            },
-            discount: 0 ,
-            });
-            // Save the new product to the database
-            await newProduct.save();
+            if(req.body.name && req.body.category && req.body.price && req.body.description && req.file.path && req.file.filename && req.file.mimetype){
+                const newProduct = new Product({
+                id: id,
+                name: req.body.name,
+                catagory: req.body.category,
+                price: req.body.price,
+                description: req.body.description,
+                image: {
+                    path: req.file.path,
+                    name: req.file.filename,
+                    contentType: req.file.mimetype,
+                },
+                discount: 0 ,
+                });
+                // Save the new product to the database
+                await newProduct.save();
+                res.send('Product added successfully');
+                next();
+            }else{
+                res.send('Failed to add the product all fields are required')
+                next();
+            }
             // Send success response to the client
-            res.send('Product added successfully');
-            next();
+
         }
         });
     }catch(err){

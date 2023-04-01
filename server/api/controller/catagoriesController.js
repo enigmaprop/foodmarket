@@ -66,7 +66,7 @@ module.exports.addCatagory = async (req , res , next)=>{
 module.exports.deleteCatagory = async (req , res , next)=>{
     try{
         const name = req.params.name;
-        console.log(name);
+        //console.log(name);
         const deletedCatagory = await Catagory.deleteOne({name});
         res.send('Catagory deleted successfully');
         next();

@@ -1,6 +1,4 @@
-var news = '! اهلا وسهلا بمتجرنا , نتمنى لكم يوما سعيد'
-
-;
+var news = '! اهلا وسهلا بمتجرنا , نتمنى لكم يوما سعيد';
 
 module.exports.addNews = (req , res , next)=>{
     try{

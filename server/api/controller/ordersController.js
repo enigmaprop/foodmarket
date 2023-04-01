@@ -8,7 +8,7 @@ module.exports.getOrders = async (req, res, next) => {
   try {
     // Find all orders in the database
     const orders = await Orders.find({});
-    console.log(orders);
+    //console.log(orders);
 
     // Send response with orders data
     res.json(orders);
@@ -69,7 +69,7 @@ module.exports.addOrder = async (req, res, next) => {
   try {
     // Get data from request body
     const data = req.body;
-    console.log(req.body);
+    //console.log(req.body);
 
     const discount = await Discount.findOne({id:data.discount});
     const user = await User.findOne({id:data.userId});
@@ -96,7 +96,7 @@ module.exports.addOrder = async (req, res, next) => {
             return val !== data.discount
           })
           await User.updateOne({offers: user.offers} , {offers:newOffers})
-          console.log(newOffers);
+          //console.log(newOffers);
       }
       res.send('هذا الخصم غير موجود')
       next()
@@ -128,7 +128,7 @@ module.exports.addOrder = async (req, res, next) => {
     // Save new order to the database
     await order.save();
 
-    console.log('success');
+    //console.log('success');
 
     // Send response with success message
     res.send('Order added sucessfully');
