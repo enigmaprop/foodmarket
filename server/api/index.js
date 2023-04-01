@@ -26,7 +26,7 @@ app.use(helmet.contentSecurityPolicy({
     defaultSrc: ["'self'"],
     scriptSrc: ["'self'"],
     styleSrc: ["'self'"],
-    imgSrc: ["'self'", 'data:', 'http://localhost:3000'] ,
+    imgSrc: ["'self'", 'data:', 'https://market-ekz3.onrender.com'] ,
   }
 }));
 
@@ -37,7 +37,7 @@ app.use(helmet.hsts({
   preload: true
 }));
 
-const whitelist = ['http://localhost:3000'];
+const whitelist = ['https://market-ekz3.onrender.com'];
 
 app.use(cors({
   origin: function (origin, callback) {
