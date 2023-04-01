@@ -19,7 +19,7 @@ import RefundPolicyPage from "./pages/RefundPolicyPage";
 
 function App() {
   
-  const url = 'http://localhost:4000/'
+  const url = 'https://market-api-od3p.onrender.com'
   return(
     <div>
       <Routes>
@@ -39,8 +39,8 @@ function App() {
         <Route path="/admin" element={<AdminPage pubkey='key' url={url}/>} />        
         <Route path="/admin/login" element={<AdminLoginPage pubkey='key' url={url}/>} />
 
-        <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
-        <Route path="refund-policy" element={<RefundPolicyPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/refund-policy" element={<RefundPolicyPage />} />
 
         <Route path="*" element={<Handle404Page/>} />
       </Routes>
