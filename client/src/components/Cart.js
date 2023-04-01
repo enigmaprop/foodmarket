@@ -52,7 +52,6 @@ function Cart(parms) {
       {item = JSON.parse(item)}
 
       if(productsIds.includes(item.id)){
-        console.log(item.id);
         return (
           <div key={index} className="flex justify-between items-center px-4 py-2 border-b border-gray-300">
             <div className="flex items-center">
@@ -64,7 +63,7 @@ function Cart(parms) {
               </div>
             </div>
             <div>
-              <button id={item.id} className="text-red-500" onClick={() => removeItem(index)}>Remove</button>
+              <button id={item.id} className="text-red-500" onClick={() => removeItem(index)}>حذف</button>
             </div>
           </div>
         );

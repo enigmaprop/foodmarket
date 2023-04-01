@@ -111,7 +111,42 @@ const PointsPackages = (parms)=>{
                     </div>
         )
     }else{
-        return <div>Loading ...</div>
+        return (
+            <div className='flex flex-col'>
+            <div className='flex justify-around'>
+                <div className='flex flex-col items-center m-6 p-6'>
+                    <h2 className='text-black text-2xl'>Add points package</h2>
+                    <form onSubmit={e=>addSubmitHandler(e)}>
+                        <div className='flex flex-col my-12'>
+                            <label>Cost</label>
+                            <input onChange={e=>setCost(e.target.value)} className='h-8 p-1 rounded-lg border border-solid border-1px border-black' type={'number'} />
+                        </div>
+                        <div className='flex flex-col my-12'>
+                            <label>Points</label>
+                            <input onChange={e=>setPoints(e.target.value)} className='h-8 p-1 rounded-lg border border-solid border-1px border-black' type={'number'} />
+                        </div>
+                        <div className='flex flex-col'>
+                            <input className='bg-indigo-500 hover:bg-indigo-600 p-1 w-20 rounded-lg text-white' type={'submit'}/>
+                            <label className='my-6'>{addResponse}</label>
+                        </div>
+                    </form>
+                </div>
+                <div className='flex flex-col items-center m-6 p-6'>
+                    <h2 className='text-black text-2xl'>Delete points package</h2>
+                    <form onSubmit={e=>deleteSubmitHandler(e)}>
+                        <div className='flex flex-col my-12'>
+                            <label>Points Package Cost</label>
+                            <input onChange={e=>setDeleteCost(e.target.value)} className='h-8 p-1 rounded-lg border border-solid border-1px border-black' type={'number'} />
+                        </div>
+                        <div className='flex flex-col'>
+                            <input className='bg-indigo-500 hover:bg-indigo-600 p-1 w-20 rounded-lg text-white' type={'submit'}/>
+                            <label className='my-6'>{deleteResponse}</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+        )
     }
 }
 

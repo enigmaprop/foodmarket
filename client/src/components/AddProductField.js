@@ -30,7 +30,11 @@ const AddProductField = (parms) => {
                     "Authorization":`Bearer ${Cookies.get(parms.pubkey)}`
                 }
             });
-            setResponse('تم اضافة المنتج بنجاح');
+            if(data === "Product added successfully"){
+                setResponse('تم اضافة المنتج بنجاح');
+            }else{
+                setResponse('فشلت عملية اضافة المنتج');
+            }
         } catch (error) {
             setResponse('فشلت عملية اضافة المنتج');
         }

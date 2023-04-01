@@ -33,9 +33,7 @@ const HeroSlider = () => {
           </div>
         ))}
       </Slider>
-      <div className="slider-header">
-        <h2 className='text-white'>العروض</h2>
-      </div>
+
     </div>
   );
 };

@@ -48,7 +48,7 @@ const ProductHolder = (parms) => {
 
     const buyButton = document.getElementById('buy');
     buyButton.style.backgroundColor = 'green'
-    buyButton.innerText = 'Added successfully'
+    buyButton.innerText = 'تمت الاضافة بنجاح'
     if (typeof Cookies.get(parms.cartName) === "string") {
       items = Cookies.get(parms.cartName);
       items = JSON.parse(items);
@@ -87,7 +87,7 @@ const ProductHolder = (parms) => {
     return <div>Loading</div>;
   } else {
     return (
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[100vh]">
         {/* Product Image */}
         <h1 className="text-right text-2">{product.name}</h1>
  <div className="md:flex md:flex-wrap md:-mx-4">
@@ -102,7 +102,7 @@ const ProductHolder = (parms) => {
    <div className="mb-4">
      <h2 className="font-bold text-2xl mb-2">{product.name}</h2>
      <div className="text-xl mb-2">
-  {product.discount > 0 ? (
+     <span>شيقل</span> {product.discount > 0 ? (
     <>
       {(product.price - product.discount * product.price).toFixed(2)}
       <span className="ml-2 text-gray-600 text-sm" style={lineThrough}>
@@ -111,13 +111,13 @@ const ProductHolder = (parms) => {
     </>
   ) : (
   (product.price).toFixed(2)
-  )}
+  )} 
 </div>
      <p className="text-gray-700">{product.description}</p>
    </div>
    <div className="mb-4">
      <label className="font-bold mb-2" htmlFor="quantity">
-       Quantity
+       الكمية
      </label>
      <input
        className="appearance-none border rounded w-16 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -134,7 +134,7 @@ const ProductHolder = (parms) => {
      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
      onClick={handleBuyButton}
    >
-     Buy Now
+     شراء الان
    </button>
  </div>
 </div>
