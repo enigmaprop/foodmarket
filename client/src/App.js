@@ -20,6 +20,7 @@ import RefundPolicyPage from "./pages/RefundPolicyPage";
 function App() {
   
   const url = 'https://market-api-od3p.onrender.com/'
+  // const url = 'http://localhost:4000/'
   return(
     <div>
       <Routes>
@@ -32,16 +33,12 @@ function App() {
         <Route path="/purchase" element={<PurchasePage id={'id'} url={url} cartName={'mallCartItems'} formOrder={'mallOrder'} />} />        
         <Route path="/signup" element={<SignUpPage url={url}/>} />  
         <Route path="/login" element={<LoginPage url={url}/>} />  
-
         <Route path="/profile" element={<UserPage id='id' url={url}/>} />  
         <Route path="/admin/receipt/:id" element={<ReceiptPage pubkey='key' url={url}/>} />        
-
         <Route path="/admin" element={<AdminPage pubkey='key' url={url}/>} />        
         <Route path="/admin/login" element={<AdminLoginPage pubkey='key' url={url}/>} />
-
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/refund-policy" element={<RefundPolicyPage />} />
-
         <Route path="*" element={<Handle404Page/>} />
       </Routes>
     </div>
