@@ -6,7 +6,7 @@ const {signToken} = require('./auth');;
 const jwt = require('jsonwebtoken');
 
 function authorizationMiddleware(req, res, next) {
-    const keys = ['ADDK75338460-d0b2-11ed-b024-1f4e68ded1fd'];
+    const keys = ['ADDK75338460-d0b2-11ed-b024-1f4e68ded1fd' , 'ADDK970dc770-bf8d-11ed-a43b-cdbbd718d4fb'];
     const secret = process.env.SECRET;
       const authToken = req.headers.authorization.split(' ')[1]; // Get the token from the Authorization header
       try {
